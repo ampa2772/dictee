@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/dictee/static/css/main.4488fa4f.css",
-    "main.js": "/dictee/static/js/main.4156b674.js",
+    "main.js": "/dictee/static/js/main.d3249d8c.js",
     "static/media/image.png": "/dictee/static/media/image.a9bfdb785a48dbec8651.png",
     "static/media/utilisateur.svg": "/dictee/static/media/utilisateur.5a3c8a6be3ec82f9cb35deaa86ff5a3d.svg",
     "index.html": "/dictee/index.html",
     "main.4488fa4f.css.map": "/dictee/static/css/main.4488fa4f.css.map",
-    "main.4156b674.js.map": "/dictee/static/js/main.4156b674.js.map"
+    "main.d3249d8c.js.map": "/dictee/static/js/main.d3249d8c.js.map"
   },
   "entrypoints": [
     "static/css/main.4488fa4f.css",
-    "static/js/main.4156b674.js"
+    "static/js/main.d3249d8c.js"
   ]
 }
