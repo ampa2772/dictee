@@ -36,7 +36,7 @@ function DicteeComposant() {
     localStorage.removeItem('dictationId');
     setAudioUrl('');
     try {
-      const response = await axios.post('http://localhost:5000/api/dictee/synthesize', { user });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/dictee/synthesize`, { user });
       if (response.data) {
         localStorage.setItem('audioUrl', response.data.audioUrl);
         localStorage.setItem('dictationTitle', response.data.title);
@@ -56,10 +56,10 @@ function DicteeComposant() {
 
   const fetchDictations = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/dictee/stories/${user._id}`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dictee/stories/${user._id}`);
       setDictations(response.data);
       setShowDictations(true);
-      setCurrentDictationTitle('')
+      setCurrentDictationTitle('');
     } catch (error) {
       console.error("Erreur lors de la récupération des dictées :", error);
     }
@@ -67,7 +67,7 @@ function DicteeComposant() {
 
   const playDictation = async (dictationId, title) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/dictee/play/${dictationId}`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/dictee/play/${dictationId}`, {
         headers: {
           'Content-Type': 'application/json',
           'User-Data': JSON.stringify(user)
@@ -86,7 +86,6 @@ function DicteeComposant() {
       console.error("Erreur lors de la lecture de la dictée :", error);
     }
   };
-  
 
   return (
     <>
@@ -99,9 +98,7 @@ function DicteeComposant() {
           </button>
         )}
         <div
-
           className='User-logo'
-
           onClick={() => setShowLogout(!showLogout)}>
           <img src={utilisateur} alt="Utilisateur Logo" className="current-user-change-icon" />
         </div>
@@ -133,8 +130,3 @@ function DicteeComposant() {
 }
 
 export default DicteeComposant;
-
-
-
-
-
