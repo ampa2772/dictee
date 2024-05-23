@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="container">
+        <div className="main_container">
           <Routes>
             <Route path="/" element={isAuthenticated ? <DicteeComposant /> : <IndexPages />} />
             <Route path="/confirm/:token" element={<EmailConfirmation />} />
